@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <h1> {{insurance.type_of_insurance}} </h1>
+        <p> {{insurance.about_insurance}} </p>
+
+        
+    </form>
+>{% endblock %}

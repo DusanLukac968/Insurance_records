@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method = "POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <h1>Insurance Company</h1><br>
+
+    <h4> Choose insurance to your taste</h4>
+        {% for insurance in main_page %}
+           <a  class="btn btn-outline-info" href="{% url 'insurance_details' insurance.id %}"> {{ insurance.type_of_insurance}}</a>
+        {% endfor %}
+        
+   
+
+</form>
+{% endblock %}
